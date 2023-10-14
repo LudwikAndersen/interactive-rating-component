@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+  
+</head>
+<body>
+  <div id="container">
+    <!-- Rating state start -->
+    <div id="ty">
+      <img src="images/illustration-thank-you.svg"/>
+    </div>
+
+    <!-- Rating state end -->
+
+    <!-- Thank you state start -->
+    
+    <div id="rate"><p>You selected <output id="ocena"></output> out of 5</p></div>
+
+    <h1 class="h1x">Thank you!</h1>
+    <div class="ty">
+      <p>We appreciate you taking the time to give a rating. If you ever need more support, 
+      don’t hesitate to<br> get in touch!</p>
+    </div>
+    <!-- Thank you state end -->
+  </div>
+  
+  <script src="jquery-3.7.0.min.js"></script>
+  <script src="java.js"></script>
+  <script>
+    $(document).ready(function(){
+      let uri = new URLSearchParams(window.location.search);
+      $("#ocena").val(uri.get("rate"));
+    });
+  </script>
+</body>
+</html>

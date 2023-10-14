@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+  
+</head>
+<body>
+  <div id="container">
+    <!-- Rating state start -->
+    <div id="circleStar">
+      <img src="images/icon-star.svg" id="star"/>
+    </div>
+
+   <h2>How did we do?</h2>
+    <form method="get" action="./rate.html">
+    <p>Please let us know how we did with your support<br> request. All feedback is appreciated to help us<br> improve our offering!</p>
+    <div class="numbers">
+      <div id="n0" class="num">1</div>
+      <div id="n1" class="num">2</div>
+      <div id="n2" class="num">3</div>
+      <div id="n3" class="num">4</div>
+      <div id="n4" class="num">5</div>
+    </div>
+    <input type="hidden" name="rate" id="rate">
+    <input type="submit" id="submit">
+    </form>
+    <!-- Rating state end -->
+
+    <!-- Thank you state start -->
+
+    <!--You selected  Add rating here out of 5
+
+    Thank you!
+
+    We appreciate you taking the time to give a rating. If you ever need more support, 
+    don’t hesitate to get in touch!
+
+    <!-- Thank you state end -->
+  </div>
+  
+  <script src="jquery-3.7.0.min.js"></script>
+  <script src="java.js"></script>
+  <script>
+    $(document).ready(()=>{
+      $(".num").click((e)=>{
+        let ocena = $(e.target).text();
+        /*if(e.target.nodeName == "span") {
+          ocena = $(e.target).text();
+          console.log(ocena);
+        }*/
+        
+        $("#rate").val(ocena);
+        //alert(ocena);
+        //console.log($(e.target).find("abbr"));
+        
+      })
+    });
+  </script>
+</body>
+</html>
